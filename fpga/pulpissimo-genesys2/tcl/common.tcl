@@ -8,6 +8,7 @@ if [info exists ::env(BOARD)] {
 if [info exists ::env(XILINX_BOARD)] {
     set XILINX_BOARD $::env(XILINX_BOARD)
 }
+set_param board.repoPaths [get_property LOCAL_ROOT_DIR [xhub::get_xstores xilinx_board_store]]
 set partNumber $::env(XILINX_PART)
 
 # sets up Vivado messages in a more sensible way
